@@ -1,0 +1,107 @@
+insert into warehouse(itemnumber,itemdescription,shelvenumber,quantitystock)
+
+values('2','food','12A','1500');
+
+insert into warehouse(itemnumber,itemdescription,shelvenumber,quantitystock)
+
+values('3','food','13A','1500') 
+
+insert into warehouse(itemnumber,itemdescription,shelvenumber,quantitystock)
+
+values('4','food','14A','1500') 
+
+insert into warehouse(itemnumber,itemdescription,shelvenumber,quantitystock)
+
+values('5','food','15A','1500')    
+
+insert into warehouse(itemnumber,itemdescription,shelvenumber,quantitystock)
+
+values('6','food','16A','1500')  
+
+
+
+-------------------------------------------------------------------------------------------------
+
+insert into truck(trucknumber,drivername,ordernumber)
+values('A1526','kuljit','152')
+
+insert into truck(trucknumber,drivername,ordernumber)
+values('A1526','ranjeet','152')
+
+insert into truck(trucknumber,drivername,ordernumber)
+values('A1526','karan','152')
+
+insert into truck(trucknumber,drivername,ordernumber)
+values('A1526','deep','152')
+
+insert into truck(trucknumber,drivername,ordernumber)
+values('A1526','ishan','152')
+
+
+--------------------------------------------------------------------------------------------------------
+
+
+CREATE TABLE WAREHOUSE (
+       item_number varchar(20),
+       item_description varchar (20),
+       shelve_number varchar (20),
+       quantity_in_stock int
+);
+PRIMARY KEY(item_number)
+
+----------------------------------------------------------------------------------------------
+
+CREATE TABLE TRUCK (
+      truck_number varchar(20),
+      driver_name varchar(20),
+      order_number varchar(20),
+  PRIMARY KEY(item_number)
+);
+
+--------------------------------------------------------------------------------------------
+
+CREATE TABLE ORDERS (
+  order_id varchar(20),
+  item_number varchar(20),
+  order_number varchar(20),
+);
+
+----------------------------------------------------------------------------------------------
+insert into orders(order_id,item_number,order_number)
+values('2','1527','153')
+insert into orders(order_id,item_number,order_number)
+values('3','1528','154')
+insert into orders(order_id,item_number,order_number)
+values('4','1529','155')
+insert into orders(order_id,item_number,order_number)
+values('5','1530','156')
+insert into orders(order_id,item_number,order_number)
+values('6','1531','157')
+
+-------------------------------------------------------------------------------------------------
+UPDATE warehouse
+SET item_price ='15'
+where itemnumber ='2';
+UPDATE warehouse
+SET item_price ='20'
+where itemnumber ='3';
+UPDATE warehouse
+SET item_price ='25'
+where itemnumber ='4';
+UPDATE warehouse
+SET item_price ='40'
+where itemnumber ='5';
+UPDATE warehouse
+SET item_price ='45'
+where itemnumber ='6';
+
+------------------------------------------------------------------------------------------------------
+select* from warehouse as w,orders as o,truck as t
+
+where w.item_number = o.item_number and t.order_number = o.order_number
+
+
+
+
+
+
